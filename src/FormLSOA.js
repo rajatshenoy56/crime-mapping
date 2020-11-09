@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import './form.css'
 export default class MyForm extends React.Component {
     constructor(props) {
       super(props);
@@ -9,18 +9,12 @@ export default class MyForm extends React.Component {
     mySubmitHandler = (event) => {
       event.preventDefault();
       alert("You are submitting " + this.state.lsoa_code);
-      // const data = 'http://127.0.0.1:8887/final_data.json';
       axios.get(`http://127.0.0.1:8887/final_data.json`)
       .then(res => {
-        // var response = JSON.parse(res.data);
-          // console.log(response)
-          console.log(res)
           for(var i = 0; i < res.data.length; i++) {
             var row = res.data[i]
-            console.log(row.lsoa_code)
             if(row.lsoa_code === this.state.lsoa_code)
             {  
-              console.log(row.lsoa_code)
               this.setState({nov_pred: row.pred11});
             }
           }
@@ -46,5 +40,4 @@ export default class MyForm extends React.Component {
       );
     }
   }
-// // ReactDOM.render(<MyForm />, document.getElementById('root'));
 

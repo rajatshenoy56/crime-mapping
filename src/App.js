@@ -3,7 +3,7 @@ import React from 'react';
 import LayeredMap from './LayeredMap';
 import FormLSOA from './FormLSOA';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
+// import './App.css';
 
 export default class App extends React.Component {
     render() {
