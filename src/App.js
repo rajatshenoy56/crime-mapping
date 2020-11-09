@@ -1,7 +1,9 @@
 /// app.js
 import React from 'react';
 import LayeredMap from './LayeredMap';
+import FormLSOA from './FormLSOA';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
 
 export default class App extends React.Component {
     render() {
@@ -17,6 +19,7 @@ export default class App extends React.Component {
                     <Route path='/plot/2017' exact component={() => <LayeredMap key={'2017'} year={'2017'} />} />
                     <Route path='/plot/2018' exact component={() => <LayeredMap key={'2018'} year={'2018'} />} />
                     <Route path='/plot/2019' exact component={() => <LayeredMap key={'2019'} year={'2019'} />} />
+                    <Route path='/form' exact component={() => <FormLSOA/>} />
                 </Router>
             </div>
         );
